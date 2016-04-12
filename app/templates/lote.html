@@ -1,0 +1,148 @@
+<h1>{{ctrl.lote.nombre}}</h1>
+
+<div class="row">
+
+    <div class="col-sm-8"> 
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Lote</h3>
+            </div>
+            <div class="panel-body"> 
+                <form ng-submit="ctrl.update_lote(ctrl.lote)">
+                    <div class="form-group">
+                        <label>Obra</label>
+                        <p class="form-control-static" >{{ctrl.lote.obra}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Manzana</label>
+                        <p class="form-control-static" >{{ctrl.lote.manzana}}</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Lote</label>
+                        <p class="form-control-static" >{{ctrl.lote.nombre}}</p>
+                    </div>  
+                    <div class="form-group">
+                        <label>Valor Venta</label>
+                        <p class="form-control-static" >{{ctrl.lote.valor_venta}}</p>
+                    </div> 
+                    <div class="form-group">
+                        <label>Estado Venta</label>
+                        <select id="impuesto" class="form-control" ng-options="estado.descripcion for estado in ctrl.estados_venta" ng-model="ctrl.lote.estado_venta">
+                            <option value="">Seleccionar...</option>
+                        </select>
+                    </div>
+
+
+                    <button type="submit" class="btn btn-default">Guardar</button>
+                    <button type="button" class="btn btn-default" ng-click="">Pago</button>
+                </form>
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Cliente</h3>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label>Cliente</label>
+                    <p class="form-control-static" >{{ctrl.lote.cliente.nombre}}</p>
+                </div>
+                <div class="form-group">
+                    <label>RFC</label>
+                    <p class="form-control-static" >{{ctrl.lote.cliente.rfc}}</p>
+                </div> 
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <p class="form-control-static" >{{ctrl.lote.cliente.telefono1}}</p>
+                </div> 
+                <div class="form-group">
+                    <label>Teléfono 2</label>
+                    <p class="form-control-static" >{{ctrl.lote.cliente.telefono2}}</p>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <p class="form-control-static" >{{ctrl.lote.cliente.email}}</p>
+                </div>
+                <div class="form-group">
+                    <label>Dirección</label>
+                    <p class="form-control-static" >{{ctrl.lote.cliente.direccion}}</p>
+                </div>
+                <div class="form-group">
+                    <label>Nota</label>
+                    <p class="form-control-static" >{{ctrl.lote.cliente.nota}}</p>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Pagos</h3>
+            </div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Monto</th>
+                            <th>Tipo</th>
+                            <th>Forma</th>
+                            <th>Fecha</th>
+                            <th>Nota</th>
+                            <th>Verificado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>$1,000.00</td>
+                            <td>Abono</td>
+                            <td>Transferencia</td>
+                            <td>21/04/2016</td>
+                            <td>Retraso de 5 días</td>
+                            <td>Si</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel-footer">
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Pago</h3>
+            </div>
+            <div class="panel-body">
+                <div>
+                    <div class="form-group">
+                        <label>Monto</label>
+                        <input type="text" class="form-control" ng-model="ctrl.pago.monto">
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo</label>
+                        <input type="text" class="form-control" ng-model="ctrl.pago.tipo">
+                    </div>
+                    <div class="form-group">
+                        <label>Forma</label>
+                        <input type="text" class="form-control" ng-model="ctrl.pago.forma">
+                    </div>
+                    <div class="form-group">
+                        <label>Fecha</label>
+                        <input type="text" class="form-control" ng-model="ctrl.pago.fecha">
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button class="btn btn-default">Nuevo</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div>{{ctrl.lote|json}}</div>-->

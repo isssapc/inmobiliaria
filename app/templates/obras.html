@@ -1,0 +1,41 @@
+<h1>Obras</h1>
+
+<div>
+    <div class="form-group">      
+        <label>Obras</label>
+        <div class="input-group">
+            <select class="form-control" ng-options="obra.nombre for obra in ctrl.obras" ng-model="ctrl.obra">
+                <option value="">Seleccionar obra...</option>
+            </select>
+            <div class="input-group-btn">
+                <button class="btn btn-primary" ng-click="ctrl.get_lotes(ctrl.obra)">Cargar</button>
+            </div>
+        </div>    
+    </div>
+</div>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Manzana</th>
+                <th>Lote</th>
+                <th>Estado</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="lote in ctrl.manzanas.lotes">
+                <td>{{lote.nombre_manzana}}</td>
+                <td>{{lote.nombre}}</td>
+                <td>{{lote.estado_venta}}</td>
+                <td>
+                    <div class="btn-group-sm">
+                        <button class="btn btn-default" ng-click="ctrl.editar_lote(lote)"><i class="glyphicon glyphicon-pencil"></i></button>
+                          <button class="btn btn-default"><i class="glyphicon glyphicon-zoom-in"></i></button>
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
