@@ -1,12 +1,10 @@
-angular.module('VentasApp').controller('LoteCtrl', ['$state', 'VentasApi', '$stateParams',
-    function ($state, VentasApi, $stateParams) {
+angular.module('VentasApp').controller('LoteCtrl', ['$state', 'VentasApi', '$stateParams','tipos','formas',
+    function ($state, VentasApi, $stateParams,tipos,formas) {
         var self = this;
         self.lote = {};
         self.estados_venta=[];
-
-        VentasApi.get_lote($stateParams.id_lote).then(function (response) {
-            self.lote = response.data;
-        });
+        self.formas=formas.data;
+        self.tipos=tipos.data;
         
          VentasApi.get_estados_venta().then(function (response) {
             self.estados_venta = response.data;

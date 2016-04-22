@@ -14,6 +14,12 @@ angular.module('VentasApp')
                     },
                     get_lotes_obra: function (id_obra) {
                         return $http.get(url + 'obras/get_manzanas_lotes/' + id_obra);
+                    },
+                     get_tipos_pago: function () {
+                        return $http.get(url + 'ventas_tipos_pago' );
+                    },
+                     get_formas_pago: function () {
+                        return $http.get(url + 'ventas_formas_pago');
                     }
                 };
             }]);

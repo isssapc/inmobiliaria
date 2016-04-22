@@ -1,11 +1,9 @@
-<h1>Obras</h1>
-
 <div>
     <div class="form-group">      
-        <label>Obras</label>
+        <label>Desarrollos</label>
         <div class="input-group">
             <select class="form-control" ng-options="obra.nombre for obra in ctrl.obras" ng-model="ctrl.obra">
-                <option value="">Seleccionar obra...</option>
+                <option value="">Seleccionar desarrollo...</option>
             </select>
             <div class="input-group-btn">
                 <button class="btn btn-primary" ng-click="ctrl.get_lotes(ctrl.obra)">Cargar</button>

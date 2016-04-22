@@ -19,16 +19,24 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 .state('lote', {
                     url: '/lote/:id_lote',
                     templateUrl: 'templates/lote.html',
-                    controller: 'LoteCtrl as ctrl'
+                    controller: 'LoteCtrl as ctrl',
+                    resolve:{
+                        tipos:function(VentasApi){
+                            return VentasApi.get_tipos_pago();
+                        },
+                        formas:function(VentasApi){
+                            return VentasApi.get_formas_pago();
+                        }
+                    }
                 })
                 .state('clientes', {
                     url: '/clientes',
                     templateUrl: 'templates/clientes.html',
                     controller: 'ClientesCtrl as ctrl'
                 })
-                .state('obras', {
-                    url: '/obras',
-                    templateUrl: 'templates/obras.html',
+                .state('desarrollos', {
+                    url: '/desarrollos',
+                    templateUrl: 'templates/desarrollos.html',
                     controller: "ObrasCtrl as ctrl"
                 });
     }]);

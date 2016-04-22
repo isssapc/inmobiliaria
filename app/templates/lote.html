@@ -1,5 +1,3 @@
-<h1>{{ctrl.lote.nombre}}</h1>
-
 <div class="row">
 
     <div class="col-sm-8"> 
@@ -20,7 +18,15 @@
                     <div class="form-group">
                         <label>Lote</label>
                         <p class="form-control-static" >{{ctrl.lote.nombre}}</p>
-                    </div>  
+                    </div>
+                    <div class="form-group">
+                        <label>Valor Base</label>
+                        <p class="form-control-static" >{{ctrl.lote.valor_base}}</p>
+                    </div> 
+                    <div class="form-group">
+                        <label>Valor Ampliación</label>
+                        <p class="form-control-static" >{{ctrl.lote.valor_ampliacion}}</p>
+                    </div> 
                     <div class="form-group">
                         <label>Valor Venta</label>
                         <p class="form-control-static" >{{ctrl.lote.valor_venta}}</p>
@@ -127,15 +133,23 @@
                     </div>
                     <div class="form-group">
                         <label>Tipo</label>
-                        <input type="text" class="form-control" ng-model="ctrl.pago.tipo">
+                        <select class="form-control" ng-model="ctrl.pago.tipo" ng-options="tipo.descripcion for tipo in ctrl.tipos">
+                            <option value="">Seleccionar Tipo...</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Forma</label>
-                        <input type="text" class="form-control" ng-model="ctrl.pago.forma">
+                        <select class="form-control" ng-model="ctrl.pago.forma" ng-options="forma.descripcion for forma in ctrl.formas">
+                            <option value="">Seleccionar Forma...</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Fecha</label>
                         <input type="text" class="form-control" ng-model="ctrl.pago.fecha">
+                    </div>
+                     <div class="form-group">
+                        <label>Nota</label>
+                        <input type="text" class="form-control" ng-model="ctrl.pago.nota">
                     </div>
                 </div>
             </div>
