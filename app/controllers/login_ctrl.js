@@ -2,7 +2,7 @@ angular.module('VentasApp').controller('LoginCtrl', ['$state','VentasApi', funct
         var self = this;
         
         self.login=function(){
-          $state.go('obras');  
+          $state.go('desarrollos');  
         };
        
 

@@ -20,12 +20,15 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     url: '/lote/:id_lote',
                     templateUrl: 'templates/lote.html',
                     controller: 'LoteCtrl as ctrl',
-                    resolve:{
-                        tipos:function(VentasApi){
+                    resolve: {
+                        tipos: function (VentasApi) {
                             return VentasApi.get_tipos_pago();
                         },
-                        formas:function(VentasApi){
+                        formas: function (VentasApi) {
                             return VentasApi.get_formas_pago();
+                        },
+                        estados: function (VentasApi) {
+                            return VentasApi.get_estados_venta();
                         }
                     }
                 })
@@ -34,10 +37,19 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     templateUrl: 'templates/clientes.html',
                     controller: 'ClientesCtrl as ctrl'
                 })
+                .state('clientes.nuevo', {
+                    url: '/nuevo',
+                    views: {
+                        '@': {
+                            templateUrl: 'templates/nuevo_cliente.html',
+                            controller: 'NuevoClienteCtrl as ctrl'
+                        }
+                    }
+                })
                 .state('desarrollos', {
                     url: '/desarrollos',
                     templateUrl: 'templates/desarrollos.html',
-                    controller: "ObrasCtrl as ctrl"
+                    controller: "DesarrollosCtrl as ctrl"
                 });
     }]);
 app.controller('AppCtrl', [function () {

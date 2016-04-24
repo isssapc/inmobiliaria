@@ -6,10 +6,6 @@
         <input type="text" id="nombre" class="form-control" placeholder="Nombre" ng-model="ctrl.cliente.nombre" >
     </div>
     <div class="form-group">
-        <label for="contacto">Contacto</label>
-        <input type="text" id="contacto" class="form-control" placeholder="Contacto" ng-model="ctrl.cliente.contacto" >
-    </div>
-    <div class="form-group">
         <label for="calle">Calle</label>
         <input type="text" id="calle" class="form-control" placeholder="Calle" ng-model="ctrl.cliente.calle" >
     </div>
@@ -50,7 +46,7 @@
     
     
     
-    <div class="form-group">
+<!--    <div class="form-group">
         <label for="impuesto">Impuesto</label>
         <select id="impuesto" class="form-control">
             <option value="">Seleccionar...</option>
@@ -60,7 +56,7 @@
         <label>
             <input type="checkbox"> Asignar??
         </label>
-    </div>
+    </div>-->
     <button type="submit" class="btn btn-default">Guardar</button>
 </form>
 <div>{{ctrl.cliente|json}}</div>

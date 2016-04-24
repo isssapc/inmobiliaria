@@ -2,11 +2,11 @@
     <div class="form-group">      
         <label>Desarrollos</label>
         <div class="input-group">
-            <select class="form-control" ng-options="obra.nombre for obra in ctrl.obras" ng-model="ctrl.obra">
+            <select class="form-control" ng-options="desarrollo.nombre for desarrollo in ctrl.desarrollos" ng-model="ctrl.desarrollo">
                 <option value="">Seleccionar desarrollo...</option>
             </select>
             <div class="input-group-btn">
-                <button class="btn btn-primary" ng-click="ctrl.get_lotes(ctrl.obra)">Cargar</button>
+                <button class="btn btn-primary" ng-click="ctrl.get_lotes(ctrl.desarrollo)">Cargar</button>
             </div>
         </div>    
     </div>
@@ -22,7 +22,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="lote in ctrl.manzanas.lotes">
+           <tr  ng-repeat="lote in ctrl.lotes">
                 <td>{{lote.nombre_manzana}}</td>
                 <td>{{lote.nombre}}</td>
                 <td>{{lote.estado_venta}}</td>
@@ -34,6 +34,7 @@
                     </div>
                 </td>
             </tr>
+    
         </tbody>
     </table>
 </div>
