@@ -3,7 +3,7 @@ var underscore = angular.module('underscore', []);
 underscore.factory('_', ['$window', function ($window) {
         return $window._;
     }]);
-var app = angular.module('VentasApp', ['ui.router', 'smart-table', 'underscore', 'myApp.version']);
+var app = angular.module('VentasApp', ['ui.router', 'smart-table', 'underscore', 'myApp.version','ui.uploader']);
 app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
         $stateProvider
